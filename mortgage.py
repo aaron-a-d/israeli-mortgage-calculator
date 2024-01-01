@@ -96,7 +96,7 @@ def adjust_principal_for_index(principal, index_change):
 def plot_amortization_schedule(schedule):
     plt.figure(figsize=(12, 6))
     plt.subplot(1, 2, 1)
-    plt.plot(schedule['Month'], schedule['Remaining Balance'], color='blue', label='Remaining Balance')
+    plt.plot(schedule['Month'].values, schedule['Remaining Balance'].values, color='blue', label='Remaining Balance')
     plt.title('Remaining Loan Balance Over Time')
     plt.xlabel('Month')
     plt.ylabel('Balance')
