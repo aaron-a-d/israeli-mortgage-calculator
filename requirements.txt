@@ -1,0 +1,6 @@
+streamlit==1.8.0
+pandas==1.4.1
+numpy==1.22.2
+matplotlib==3.5.1
+requests==2.27.1
+beautifulsoup4==4.10.0
