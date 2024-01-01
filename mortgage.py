@@ -152,7 +152,8 @@ def main():
         variable_years = st.number_input("Adjustment Period (Years)", min_value=1, max_value=years, value=5)
         initial_rate = st.number_input("Initial Annual Interest Rate (%)", min_value=0.1, max_value=20.0, value=3.5)
         rate_adjustment = st.number_input("Rate Adjustment (%)", min_value=-5.0, max_value=5.0, value=0.5)
-        index_change = st.number_input("Annual Index Change (%)", min_value=-10.0, max_value=10.0,
+        index_change = st.number_input("Annual Index Change (%) [Source](https://tradingeconomics.com/israel/inflation-cpi)",
+                                       min_value=-10.0, max_value=10.0,
                                        value=annual_index_change)
 
         if st.button(f"Calculate {mortgage_type}"):
