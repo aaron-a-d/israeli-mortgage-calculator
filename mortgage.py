@@ -127,7 +127,7 @@ def main():
 
     if mortgage_type == "Fixed Unlinked":
         interest_rate = st.number_input("Annual Interest Rate (%)", min_value=0.1, max_value=20.0, value=3.5)
-        if st.button("Calculate for Fixed Rate"):
+        if st.button(f"Calculate {mortgage_type}"):
             monthly_payment = calculate_fixed_mortgage(principal, interest_rate, years)
             schedule = create_amortization_schedule(principal, interest_rate, years, mortgage_type)
             st.write(f"Monthly Payment: ₪{monthly_payment:,.2f}")
@@ -139,7 +139,7 @@ def main():
         interest_rate = st.number_input("Annual Interest Rate (%)", min_value=0.1, max_value=20.0, value=3.5)
         index_change = st.number_input("Annual Index Change (%)", min_value=-10.0, max_value=10.0,
                                        value=annual_index_change)
-        if st.button("Calculate for Fixed Linked"):
+        if st.button(f"Calculate {mortgage_type}"):
             adjusted_principal = adjust_principal_for_index(principal, index_change)
             monthly_payment = calculate_fixed_mortgage(adjusted_principal, interest_rate, years)
             schedule = create_amortization_schedule(adjusted_principal, interest_rate, years, mortgage_type)
@@ -155,7 +155,7 @@ def main():
         index_change = st.number_input("Annual Index Change (%)", min_value=-10.0, max_value=10.0,
                                        value=annual_index_change)
 
-        if st.button("Calculate Mortgage"):
+        if st.button(f"Calculate {mortgage_type}"):
             schedule = create_amortization_schedule(principal, initial_rate, years, mortgage_type, variable_years,
                                                     rate_adjustment, index_change)
             st.dataframe(schedule)
